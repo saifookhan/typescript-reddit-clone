@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Post = void 0;
 const core_1 = require("@mikro-orm/core");
+const mongodb_1 = require("@mikro-orm/mongodb");
 const type_graphql_1 = require("type-graphql");
 let Post = class Post {
     constructor() {
@@ -21,7 +22,7 @@ let Post = class Post {
 __decorate([
     type_graphql_1.Field(() => String),
     core_1.PrimaryKey(),
-    __metadata("design:type", Number)
+    __metadata("design:type", mongodb_1.ObjectId)
 ], Post.prototype, "_id", void 0);
 __decorate([
     type_graphql_1.Field(() => String),

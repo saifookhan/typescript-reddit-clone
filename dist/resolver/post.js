@@ -15,9 +15,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.PostResolver = void 0;
 const Post_1 = require("../entities/Post");
 const type_graphql_1 = require("type-graphql");
+const mongodb_1 = require("@mikro-orm/mongodb");
 let PostResolver = class PostResolver {
     posts(ctx) {
         return ctx.em.find(Post_1.Post, {});
+    }
+    post(_id, ctx) {
+        return ctx.em.findOne(Post_1.Post, { _id: new mongodb_1.ObjectId("6052a618d9cf5117c14d206a") });
     }
 };
 __decorate([
@@ -27,6 +31,14 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", void 0)
 ], PostResolver.prototype, "posts", null);
+__decorate([
+    type_graphql_1.Query(() => Post_1.Post, { nullable: true }),
+    __param(0, type_graphql_1.Arg('_id', () => String)),
+    __param(1, type_graphql_1.Ctx()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Object]),
+    __metadata("design:returntype", Promise)
+], PostResolver.prototype, "post", null);
 PostResolver = __decorate([
     type_graphql_1.Resolver()
 ], PostResolver);

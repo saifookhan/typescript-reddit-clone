@@ -1,4 +1,5 @@
 import { Entity, PrimaryKey, Property } from "@mikro-orm/core";
+import { ObjectId } from "@mikro-orm/mongodb";
 import { Field, ObjectType } from "type-graphql";
 
 @ObjectType()
@@ -7,7 +8,7 @@ export class Post {
 
   @Field(() => String)
   @PrimaryKey()
-  _id!: number;
+  _id!: ObjectId;
 
   @Field( () => String)
   @Property({type: "text"})
