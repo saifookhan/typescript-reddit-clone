@@ -28,6 +28,7 @@
     "@mikro-orm/mongodb": "^4.4.4",
     "@types/lodash": "^4.14.168",
     "apollo-server-express": "^2.21.1",
+    "argon2": "^0.27.1",
     "express": "^4.17.1",
     "graphql": "^15.5.0",
     "reflect-metadata": "^0.1.13",
