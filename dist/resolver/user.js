@@ -110,6 +110,9 @@ let UserResolver = class UserResolver {
                     };
                 }
             }
+            ctx.req.session.userId = user._id;
+            console.log("ctx.req.session");
+            console.log(ctx.req.session);
             return { user };
         });
     }
@@ -136,7 +139,10 @@ let UserResolver = class UserResolver {
                         }]
                 };
             }
-            return { user, };
+            ctx.req.session.userId = user._id;
+            console.log("ctx.req.session");
+            console.log(ctx.req.session);
+            return { user };
         });
     }
 };
